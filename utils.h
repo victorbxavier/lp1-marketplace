@@ -17,12 +17,12 @@ static const char alphanum[] =
 
 int stringLength = sizeof(alphanum) - 1;
     
-char genRandom()
+inline char genRandom()
 {
     return alphanum[rand() % stringLength];
 }
 
-string genRandomString(int length)
+inline string genRandomString(int length)
 {
     string str;
 
@@ -39,11 +39,11 @@ string genRandomString(int length)
     return str;
 }
 
-string geraHash(string str) {
+inline string geraHash(string str) {
     return picosha2::hash256_hex_string(str);
 }
 
-bool testa(bool condicao, string mensagem) {
+inline bool testa(bool condicao, string mensagem) {
     if (condicao) {
         cout << "PASSOU: " << mensagem << endl;
         return true;
